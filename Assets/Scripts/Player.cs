@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    
+    Animator animator;
 
     Playonspacebar sound;
 
     [SerializeField]
     private GameObject bullet;
-
 
     [SerializeField]
     KeyCode shoot;
@@ -33,12 +32,15 @@ public class Player : MonoBehaviour
     float speed = 5;
     float shootTimer;
 
+    bool grounded;
+
     float health = 10;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         sound = FindObjectOfType<Playonspacebar>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -57,15 +59,23 @@ public class Player : MonoBehaviour
         if (Input.GetKey(shoot) && shootTimer > 0.5)
         {
             shootTimer = 0;
-            Instantiate(bullet, transform.position + direction, Quaternion.identity);
+            Instantiate(bullet, transform.position + direction * 2, Quaternion.identity);
         }
 
         if (Input.GetKey(right) && transform.position.x < 25.2)
         {
+            if (grounded == true)
+            {
+                animator.SetInteger("folium", 0);
+            }
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
         }
         if (Input.GetKey(left) && transform.position.x > -25.2)
         {
+            if (grounded == true)
+            {
+                animator.SetInteger("folium", 1);
+            }
             transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
         }
     }
@@ -73,6 +83,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(up) && collision.gameObject.tag == "Ground")
         {
+            animator.SetInteger("folium", 2);
             sound.someSound.Play();
             rb.AddForce(transform.up * 4, ForceMode2D.Impulse);
         }

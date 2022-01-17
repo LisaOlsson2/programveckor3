@@ -820,7 +820,7 @@ AnimatorController:
   - m_Name: folium
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 3
+    m_DefaultInt: 5
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   m_AnimatorLayers:
