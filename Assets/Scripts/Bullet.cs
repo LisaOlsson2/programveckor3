@@ -20,10 +20,18 @@ public class Bullet : MonoBehaviour
         if (GameObject.Find("Enemy").GetComponent<Enemy>().goRight == true)
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            if (transform.position.x >= 8)
+            {
+                Destroy(gameObject);
+            }
         }
         else if (GameObject.Find("Enemy").GetComponent<Enemy>().goRight == false)
         {
             transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
+            if (transform.position.x <= -8)
+            {
+                Destroy(gameObject);
+            }
         }
 
         

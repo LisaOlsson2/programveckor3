@@ -17,7 +17,7 @@ public class EnemyShooting : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 3)
+        if (timer >= 2.9)
         {
             Instantiate(Bullet, transform.position, Quaternion.identity);
             timer = 0;
