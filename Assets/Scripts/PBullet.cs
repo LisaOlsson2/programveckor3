@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PBullet : MonoBehaviour
 {
-    float speed = 8;
+    float speed = 10;
     Vector3 direction;
     Player player;
 
