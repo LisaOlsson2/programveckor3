@@ -29,10 +29,8 @@ public class Player : MonoBehaviour
 
     public Vector3 direction;
     Vector3 worldmouse;
-    float speed = 5;
+    float speed = 500;
     float shootTimer;
-
-    bool grounded;
 
     float health = 10;
     Rigidbody2D rb;
@@ -62,30 +60,24 @@ public class Player : MonoBehaviour
             Instantiate(bullet, transform.position + direction * 2, Quaternion.identity);
         }
 
-        if (Input.GetKey(right) && transform.position.x < 25.2)
+        if (Input.GetKey(right))
         {
-            if (grounded == true)
-            {
-                animator.SetInteger("folium", 0);
-            }
-            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            animator.SetInteger("folium", 0);
+            rb.velocity = new Vector3(speed, 0, 0) * Time.deltaTime;
         }
-        if (Input.GetKey(left) && transform.position.x > -25.2)
+        if (Input.GetKey(left))
         {
-            if (grounded == true)
-            {
-                animator.SetInteger("folium", 1);
-            }
-            transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+            animator.SetInteger("folium", 1);
+            rb.velocity = new Vector3(-speed, 0, 0) * Time.deltaTime;
         }
     }
     void OnCollisionStay2D(Collision2D collision)
     {
         if (Input.GetKey(up) && collision.gameObject.tag == "Ground")
         {
+            rb.AddForce(transform.up * 4, ForceMode2D.Impulse);
             animator.SetInteger("folium", 2);
             sound.someSound.Play();
-            rb.AddForce(transform.up * 4, ForceMode2D.Impulse);
         }
     }
     void OnTriggerStay2D(Collider2D collision)
