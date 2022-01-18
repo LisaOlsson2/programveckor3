@@ -29,9 +29,11 @@ public class Player : MonoBehaviour
 
     public Vector3 direction;
     Vector3 worldmouse;
-    float speed = 500;
+    float speed = 5;
     float shootTimer;
 
+    int directionA = 1;
+    bool grounded;
     float health = 10;
     Rigidbody2D rb;
 
@@ -62,13 +64,41 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(right))
         {
-            animator.SetInteger("folium", 0);
-            rb.velocity = new Vector3(speed, 0, 0) * Time.deltaTime;
+            directionA = 1;
+            if (grounded == false)
+            {
+                animator.SetInteger("folium", 4);
+            }
+            if (grounded == true)
+            {
+                animator.SetInteger("folium", 0);
+            }
+            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
         }
         if (Input.GetKey(left))
         {
-            animator.SetInteger("folium", 1);
-            rb.velocity = new Vector3(-speed, 0, 0) * Time.deltaTime;
+            directionA = 2;
+            if (grounded == false)
+            {
+                animator.SetInteger("folium", 2);
+            }
+            if (grounded == true)
+            {
+                animator.SetInteger("folium", 1);
+            }
+            transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+        }
+
+        if (Input.GetKey(right) == false && Input.GetKey(left) == false && grounded == true)
+        {
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 5);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 3);
+            }
         }
     }
     void OnCollisionStay2D(Collision2D collision)
@@ -76,7 +106,6 @@ public class Player : MonoBehaviour
         if (Input.GetKey(up) && collision.gameObject.tag == "Ground")
         {
             rb.AddForce(transform.up * 4, ForceMode2D.Impulse);
-            animator.SetInteger("folium", 2);
             sound.someSound.Play();
         }
     }
@@ -94,9 +123,37 @@ public class Player : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
+
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 5);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 3);
+            }
+        }
         if (collision.gameObject.tag == "Enemy")
         {
             health -= 1;
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = false;
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 4);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 2);
+            }
         }
     }
 }
