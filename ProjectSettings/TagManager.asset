@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - PBullet
   - NotGround
+  - Enemy2
+  - Enemy
   layers:
   - Default
   - TransparentFX

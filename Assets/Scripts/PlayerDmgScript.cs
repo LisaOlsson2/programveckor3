@@ -23,10 +23,14 @@ public class PlayerDmgScript : MonoBehaviour
         {
             hp -= 1;
             
-            if (hp <= 0)
-            {
-                Destroy(gameObject);
-            }
+        }
+        if (collision.gameObject.tag == "Enemy2")
+        {
+            hp -= 2;
+        }
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
