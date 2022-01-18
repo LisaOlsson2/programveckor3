@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
             }
         }
 
-        
+        //transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
 
     }
 }
