@@ -88,6 +88,18 @@ public class Player : MonoBehaviour
             }
             transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
         }
+
+        if (Input.GetKey(right) == false && Input.GetKey(left) == false && grounded == true)
+        {
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 5);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 3);
+            }
+        }
     }
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -115,6 +127,14 @@ public class Player : MonoBehaviour
         {
             grounded = true;
 
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 5);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 3);
+            }
         }
         if (collision.gameObject.tag == "Enemy")
         {
