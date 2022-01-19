@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 97066d2f438e3fd42a1cf2ffbdd07d7c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1934158317944982915
+    second: Folium_3 1_0
+  - first:
+      213: 5792647929836561280
+    second: Folium_3 1_1
+  - first:
+      213: -1634388478651383508
+    second: Folium_3 1_2
+  - first:
+      213: -4055820554694642043
+    second: Folium_3 1_3
+  - first:
+      213: -1931754665490568211
+    second: Folium_3 1_4
+  - first:
+      213: -2145743985604285839
+    second: Folium_3 1_5
+  - first:
+      213: -4983566081710855973
+    second: Folium_3 1_6
+  - first:
+      213: 4154567067127399451
+    second: Folium_3 1_7
+  - first:
+      213: -3425632732896875947
+    second: Folium_3 1_8
+  - first:
+      213: -3045101044077523818
+    second: Folium_3 1_9
+  - first:
+      213: -8900850240195944465
+    second: Folium_3 1_10
+  - first:
+      213: -7278858874029241251
+    second: Folium_3 1_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Folium_3 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3600
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d4a781eb287da10800000000000000
+      internalID: 1934158317944982915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folium_3 1_1
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 3600
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0836fc6f99e936050800000000000000
+      internalID: 5792647929836561280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folium_3 1_2
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3600
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c214ef8865c7159e0800000000000000
+      internalID: -1634388478651383508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folium_3 1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2400
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586b2b4b1b4d6b7c0800000000000000
+      internalID: -4055820554694642043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folium_3 1_4
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2400
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb2b3add570135e0800000000000000
+      internalID: -1931754665490568211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folium_3 1_5
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2400
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a2027b639c832e0800000000000000
+      internalID: -2145743985604285839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folium_3 1_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd860f08d01d6dab0800000000000000
+      internalID: -4983566081710855973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folium_3 1_7
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1200
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b144aa75cbcf7a930800000000000000
+      internalID: 4154567067127399451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folium_3 1_8
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1200
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a2bb0ed25b570d0800000000000000
+      internalID: -3425632732896875947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folium_3 1_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c869aebb0adb5d0800000000000000
+      internalID: -3045101044077523818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folium_3 1_10
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef9b228dd3d97480800000000000000
+      internalID: -8900850240195944465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folium_3 1_11
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5c894b4b6c4cfa90800000000000000
+      internalID: -7278858874029241251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
