@@ -32,7 +32,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: jumpR
+  m_Name: jumpL
   m_Speed: 0.4
   m_CycleOffset: 0
   m_Transitions:
@@ -50,7 +50,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ef9b2bc428ceef74395e899f18de7bbd, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6d1ffb459cd9ba14895f56e038a38d1e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -140,7 +140,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: jump3 0
+  m_Name: jumpr2
   m_Speed: 0.4
   m_CycleOffset: 0
   m_Transitions:
@@ -158,7 +158,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a13f474f1ad69cd4cbc43b94c203fd1c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 51f75a28e58f0724fb0cc113e3e7ebd2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

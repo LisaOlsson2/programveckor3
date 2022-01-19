@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
             {
                 animator.SetInteger("folium", 0);
             }
-            if (transform.position.x < 24)
+            if (transform.position.x < 26)
             {
                 transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
             }
@@ -89,9 +89,21 @@ public class Player : MonoBehaviour
             {
                 animator.SetInteger("folium", 1);
             }
-            if (transform.position.x > -24)
+            if (transform.position.x > -26)
             {
                 transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+            }
+        }
+
+        if (Input.GetKey(right) == false && Input.GetKey(left) == false && grounded == true)
+        {
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 5);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 3);
             }
         }
 
