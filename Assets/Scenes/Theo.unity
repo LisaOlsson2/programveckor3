@@ -890,4 +890,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xp: 0
   level: 1
-  levelUp: 0
+  levelUp: 1

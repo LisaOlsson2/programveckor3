@@ -16,7 +16,7 @@ public class LevelSystem : MonoBehaviour
     {
         if (collision.gameObject.tag == "PBullet")
         {
-            xp += 5;
+            xp += 10;
             if (xp >= levelUp)
             {
                 level += 1;
