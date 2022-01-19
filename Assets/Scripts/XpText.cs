@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class LevelText : MonoBehaviour
+public class XpText : MonoBehaviour
 {
-    public Text _levelText;
+    public Text xpText;
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,6 @@ public class LevelText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _levelText.text = GameObject.Find("Enemy").GetComponent<LevelSystem>().xp.ToString();
+        xpText.text = GameObject.Find("Enemy").GetComponent<LevelSystem>().xp.ToString() + "xp";
     }
 }
