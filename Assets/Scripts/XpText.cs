@@ -8,6 +8,7 @@ public class XpText : MonoBehaviour
 {
     public Text xpText;
     
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,6 @@ public class XpText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        xpText.text = GameObject.Find("Enemy").GetComponent<LevelSystem>().xp.ToString() + "xp";
+        xpText.text = "Level" + GameObject.Find("Enemy").GetComponent<LevelSystem>().level.ToString() + " " + GameObject.Find("Enemy").GetComponent<LevelSystem>().xp.ToString() + "/" + GameObject.Find("Enemy").GetComponent<LevelSystem>().levelUp.ToString() +"xp";
     }
 }

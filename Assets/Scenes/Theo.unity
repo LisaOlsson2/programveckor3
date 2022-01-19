@@ -699,7 +699,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3684a2c44b3ad947838c37160398061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelText: {fileID: 1446498156}
+  xpText: {fileID: 1446498156}
+  levelText: {fileID: 1446498156}
 --- !u!114 &1446498156
 MonoBehaviour:
   m_ObjectHideFlags: 0

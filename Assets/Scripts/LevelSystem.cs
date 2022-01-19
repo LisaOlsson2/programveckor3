@@ -6,7 +6,7 @@ public class LevelSystem : MonoBehaviour
 {
     public float xp = 0;
     public float level = 1;
-    float levelUp;
+    public float levelUp;
     // Update is called once per frame
     void Update()
     {
