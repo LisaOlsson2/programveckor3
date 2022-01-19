@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     Animator animator;
 
+    float rotation;
+
     Playonspacebar sound;
 
     [SerializeField]
@@ -56,8 +58,11 @@ public class Player : MonoBehaviour
 
         direction = new Vector3(worldmouse.x - transform.position.x, worldmouse.y - transform.position.y, 0).normalized;
 
+        rotation = direction.y/direction.x;
+
         if (Input.GetKey(shoot) && shootTimer > 0.5)
         {
+            print(rotation);
             shootTimer = 0;
             Instantiate(bullet, transform.position + direction * 2, Quaternion.identity);
         }
@@ -73,7 +78,7 @@ public class Player : MonoBehaviour
             {
                 animator.SetInteger("folium", 0);
             }
-            if (transform.position.x < 26)
+            if (transform.position.x < 25.5)
             {
                 transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
             }
@@ -89,7 +94,7 @@ public class Player : MonoBehaviour
             {
                 animator.SetInteger("folium", 1);
             }
-            if (transform.position.x > -26)
+            if (transform.position.x > -25.5)
             {
                 transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
             }
