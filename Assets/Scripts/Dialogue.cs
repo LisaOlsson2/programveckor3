@@ -133,5 +133,6 @@ public class Dialogue : MonoBehaviour
             square.transform.position = new Vector3(1.7f, 6, 0);
             SceneManager.LoadScene("Lisa", LoadSceneMode.Single);
         }
+
     }
 }
