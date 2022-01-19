@@ -73,7 +73,10 @@ public class Player : MonoBehaviour
             {
                 animator.SetInteger("folium", 0);
             }
-            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            if (transform.position.x < 24)
+            {
+                transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            }
         }
         if (Input.GetKey(left))
         {
@@ -86,7 +89,10 @@ public class Player : MonoBehaviour
             {
                 animator.SetInteger("folium", 1);
             }
-            transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+            if (transform.position.x > -24)
+            {
+                transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+            }
         }
 
         if (Input.GetKey(right) == false && Input.GetKey(left) == false && grounded == true)
