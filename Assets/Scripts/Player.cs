@@ -58,13 +58,13 @@ public class Player : MonoBehaviour
 
         direction = new Vector3(worldmouse.x - transform.position.x, worldmouse.y - transform.position.y, 0).normalized;
 
-        rotation = direction.y/direction.x;
+        rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         if (Input.GetKey(shoot) && shootTimer > 0.5)
         {
             print(rotation);
             shootTimer = 0;
-            Instantiate(bullet, transform.position + direction * 2, Quaternion.identity);
+            Instantiate(bullet, transform.position + direction * 2, Quaternion.Euler(0, 0, rotation));
         }
 
         if (Input.GetKey(right))

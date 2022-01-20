@@ -34,7 +34,14 @@ public class Bullet : MonoBehaviour
             }
         }
 
-        //transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+        
 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }
