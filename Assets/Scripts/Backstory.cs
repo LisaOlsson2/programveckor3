@@ -13,6 +13,8 @@ public class Backstory : MonoBehaviour
 
     [SerializeField]
     KeyCode Next;
+    [SerializeField]
+    KeyCode Next2;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +29,13 @@ public class Backstory : MonoBehaviour
         timer += Time.deltaTime;
 
 
-        if (Input.GetKey(Next) && timer > 0.3)
+        if (Input.GetKey(Next) || Input.GetKey(Next2))
         {
-            line += 1;
-            timer = 0;
+            if (timer > 0.3)
+            {
+                line += 1;
+                timer = 0;
+            }
         }
         if (line == 1)
         {

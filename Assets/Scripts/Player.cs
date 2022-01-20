@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     KeyCode talk;
+    [SerializeField]
+    KeyCode talk2;
 
     [SerializeField]
     KeyCode right;
@@ -134,14 +136,20 @@ public class Player : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKey(talk) && collision.gameObject.name == "DialogueTrigger1")
+        if (Input.GetKey(talk) || Input.GetKey(talk2))
         {
-            SceneManager.LoadScene("Dialogue", LoadSceneMode.Single);
+            if (collision.gameObject.name == "DialogueTrigger1")
+            {
+                SceneManager.LoadScene("Dialogue", LoadSceneMode.Single);
+            }
         }
 
-        if (Input.GetKey(talk) && collision.gameObject.name == "DialogueTrigger2")
+        if (Input.GetKey(talk) || Input.GetKey(talk2))
         {
-            SceneManager.LoadScene("Dialogue2", LoadSceneMode.Single);
+            if (collision.gameObject.name == "DialogueTrigger2")
+            {
+                SceneManager.LoadScene("Dialogue2", LoadSceneMode.Single);
+            }
         }
     }
     void OnCollisionEnter2D(Collision2D collision)

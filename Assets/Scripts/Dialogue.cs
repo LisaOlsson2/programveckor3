@@ -15,6 +15,8 @@ public class Dialogue : MonoBehaviour
 
     [SerializeField]
     KeyCode talk;
+    [SerializeField]
+    KeyCode talk2;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +32,13 @@ public class Dialogue : MonoBehaviour
         timer += Time.deltaTime;
 
 
-        if (Input.GetKey(talk) && timer > 0.3)
+        if (Input.GetKey(talk) || Input.GetKey(talk2))
         {
-            line += 1;
-            timer = 0;
+            if (timer > 0.3)
+            {
+                line += 1;
+                timer = 0;
+            }
         }
 
         if (line == 1)

@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     float speed;
     public bool goRight;
     float hp = 3;
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+
         if (goRight == true)
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
@@ -26,13 +29,18 @@ public class Enemy : MonoBehaviour
             transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
         }
 
-        if (transform.position.x <= -3)
+        if (timer <= 1)
         {
             goRight = true;
+            
         }
-        else if(transform.position.x >= 3)
+        if (timer >= 1)
         {
             goRight = false;
+            if (timer >= 2)
+            {
+                timer = 0;
+            }
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

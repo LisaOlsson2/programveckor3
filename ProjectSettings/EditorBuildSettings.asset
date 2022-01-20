@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: 4ab1eca89acadd8408fc03c6915c34ec
   - enabled: 1
+    path: Assets/Scenes/Backstory.unity
+    guid: 9fd2c80e8fa3bf5449ae40a1e418b3e2
+  - enabled: 1
     path: Assets/Scenes/Dialogue.unity
     guid: 1fda3777bd893b54992df0fb86d80c17
   - enabled: 1
