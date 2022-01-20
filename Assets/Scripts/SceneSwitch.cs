@@ -8,7 +8,7 @@ public class SceneSwitch : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Level2")
+        if (collision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Level 2", LoadSceneMode.Single);
         }
