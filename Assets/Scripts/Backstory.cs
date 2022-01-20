@@ -70,7 +70,7 @@ public class Backstory : MonoBehaviour
         if (line >= 8)
         {
 
-            SceneManager.LoadScene("Dialogue", LoadSceneMode.Single);
+            SceneManager.LoadScene("Lisa", LoadSceneMode.Single);
         }
     }
 }

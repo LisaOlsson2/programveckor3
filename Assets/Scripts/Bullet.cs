@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }*/
         timer += Time.deltaTime;
-        if (timer >= 3)
+        if (timer >= 2)
         {
             Destroy(gameObject);
         }

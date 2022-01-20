@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     int directionA = 1;
     bool grounded;
-    float health = 10;
+    float health = 11;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -136,6 +136,11 @@ public class Player : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collision)
     {
+        if (Input.GetKey(up) && collision.gameObject.tag == "SkyGround")
+        {
+            rb.AddForce(transform.up * 8, ForceMode2D.Impulse);
+            sound.someSound.Play();
+        }
         if (Input.GetKey(talk) || Input.GetKey(talk2))
         {
             if (collision.gameObject.name == "DialogueTrigger1")
@@ -184,6 +189,37 @@ public class Player : MonoBehaviour
             if (directionA == 2)
             {
                 animator.SetInteger("folium", 2);
+            }
+        }
+    }
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "SkyGround")
+        {
+            grounded = false;
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 4);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 2);
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "SkyGround")
+        {
+            grounded = true;
+
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 5);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 3);
             }
         }
     }

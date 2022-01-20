@@ -10,6 +10,7 @@ TagManager:
   - NotGround
   - Enemy2
   - Enemy
+  - SkyGround
   layers:
   - Default
   - TransparentFX

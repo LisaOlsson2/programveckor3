@@ -29,15 +29,15 @@ public class Enemy : MonoBehaviour
             transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
         }
 
-        if (timer <= 1)
+        if (timer <= 2)
         {
             goRight = true;
             
         }
-        if (timer >= 1)
+        if (timer >= 2)
         {
             goRight = false;
-            if (timer >= 2)
+            if (timer >= 4)
             {
                 timer = 0;
             }
