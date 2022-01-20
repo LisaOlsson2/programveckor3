@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(shoot) && shootTimer > 0.5)
         {
+            print(rotation);
             shootTimer = 0;
             Instantiate(bullet, transform.position + direction * 2, Quaternion.Euler(0, 0, rotation));
         }

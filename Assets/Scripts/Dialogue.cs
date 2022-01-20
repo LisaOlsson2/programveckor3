@@ -144,6 +144,7 @@ public class Dialogue : MonoBehaviour
                 SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
             }
         }
+
     }
 }
        
