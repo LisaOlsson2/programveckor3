@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     Animator animator;
 
+    float rotation;
+
     Playonspacebar sound;
 
     [SerializeField]
@@ -17,6 +19,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     KeyCode talk;
+    [SerializeField]
+    KeyCode talk2;
 
     [SerializeField]
     KeyCode right;
@@ -34,8 +38,10 @@ public class Player : MonoBehaviour
 
     int directionA = 1;
     bool grounded;
-    float health = 10;
+    float health = 11;
     Rigidbody2D rb;
+
+    float xp = 13;
 
     // Start is called before the first frame update
     void Start()
@@ -56,10 +62,12 @@ public class Player : MonoBehaviour
 
         direction = new Vector3(worldmouse.x - transform.position.x, worldmouse.y - transform.position.y, 0).normalized;
 
+        rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
         if (Input.GetKey(shoot) && shootTimer > 0.5)
         {
             shootTimer = 0;
-            Instantiate(bullet, transform.position + direction * 2, Quaternion.identity);
+            Instantiate(bullet, transform.position + direction * 2, Quaternion.Euler(0, 0, rotation));
         }
 
         if (Input.GetKey(right))
@@ -73,7 +81,7 @@ public class Player : MonoBehaviour
             {
                 animator.SetInteger("folium", 0);
             }
-            if (transform.position.x < 24)
+            if (transform.position.x < 25.5)
             {
                 transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
             }
@@ -89,9 +97,21 @@ public class Player : MonoBehaviour
             {
                 animator.SetInteger("folium", 1);
             }
-            if (transform.position.x > -24)
+            if (transform.position.x > -25.5)
             {
                 transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+            }
+        }
+
+        if (Input.GetKey(right) == false && Input.GetKey(left) == false && grounded == true)
+        {
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 5);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 3);
             }
         }
 
@@ -117,14 +137,25 @@ public class Player : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKey(talk) && collision.gameObject.name == "DialogueTrigger1")
+        if (Input.GetKey(up) && collision.gameObject.tag == "SkyGround")
         {
-            SceneManager.LoadScene("Dialogue", LoadSceneMode.Single);
+            rb.AddForce(transform.up * 8, ForceMode2D.Impulse);
+            sound.someSound.Play();
+        }
+        if (Input.GetKey(talk) || Input.GetKey(talk2))
+        {
+            if (collision.gameObject.name == "DialogueTrigger1")
+            {
+                SceneManager.LoadScene("Dialogue", LoadSceneMode.Single);
+            }
         }
 
-        if (Input.GetKey(talk) && collision.gameObject.name == "DialogueTrigger2")
+        if (Input.GetKey(talk) || Input.GetKey(talk2))
         {
-            SceneManager.LoadScene("Dialogue2", LoadSceneMode.Single);
+            if (collision.gameObject.name == "DialogueTrigger2")
+            {
+                SceneManager.LoadScene("Dialogue2", LoadSceneMode.Single);
+            }
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
@@ -159,6 +190,37 @@ public class Player : MonoBehaviour
             if (directionA == 2)
             {
                 animator.SetInteger("folium", 2);
+            }
+        }
+    }
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "SkyGround")
+        {
+            grounded = false;
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 4);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 2);
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "SkyGround")
+        {
+            grounded = true;
+
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 5);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 3);
             }
         }
     }

@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     float speed;
     public bool goRight;
+    float hp = 3;
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+
         if (goRight == true)
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
@@ -25,13 +29,29 @@ public class Enemy : MonoBehaviour
             transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
         }
 
-        if (transform.position.x <= -3)
+        if (timer <= 2)
         {
             goRight = true;
+            
         }
-        else if(transform.position.x >= 3)
+        if (timer >= 2)
         {
             goRight = false;
+            if (timer >= 4)
+            {
+                timer = 0;
+            }
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "PBullet")
+        {
+            hp -= 1;
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
