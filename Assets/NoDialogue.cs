@@ -14,31 +14,7 @@ public class NoDialogue : MonoBehaviour
     DialogueChoices square;
 
     [SerializeField]
+
     KeyCode Talk; 
-
-    void Start()
-    {
-        square = FindObjectOfType<DialogueChoices>();
-        text = GetComponent<Text>();
-    }
-
-    void Update()
-    {
-        text.text = dialogue;
-        timer += Time.deltaTime;
-
-        if (Input.GetKey(Talk) && timer > 0.3)
-        {
-            line += 1;
-            timer = 0;
-        }
-
-        if (line == 1)
-        {
-            dialogue = "Well that’s a shame, hope you have a good life!"; 
-        }
-       
-       
-    }
 
 }
