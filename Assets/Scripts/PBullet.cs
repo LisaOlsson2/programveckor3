@@ -19,7 +19,7 @@ public class PBullet : MonoBehaviour
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
-        if (transform.position.y > 10 || transform.position.x < -26 || transform.position.x > 26)
+        if (transform.position.y > 10 || transform.position.x < -26 || transform.position.x > 36)
         {
             Destroy(gameObject);
         }
