@@ -5,12 +5,12 @@ using UnityEngine;
 public class CameraFollow3 : MonoBehaviour
 {
     
-    Player player;
+    PlayerLvl3 player;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<PlayerLvl3>();
     }
 
     // Update is called once per frame

@@ -6,12 +6,12 @@ public class PBullet3 : MonoBehaviour
 {
     float speed = 10;
     Vector3 direction;
-    Player player;
+    PlayerLvl3 player;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<PlayerLvl3>();
         direction = player.direction;
     }
 
