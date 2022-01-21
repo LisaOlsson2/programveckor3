@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Camera2 : MonoBehaviour
 {
-    Player player;
+    Player2 player;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<Player2>();
     }
 
     // Update is called once per frame
