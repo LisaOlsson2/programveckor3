@@ -15,6 +15,8 @@ public class Dialogue : MonoBehaviour
 
     [SerializeField]
     KeyCode talk;
+    [SerializeField]
+    KeyCode talk2;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +32,13 @@ public class Dialogue : MonoBehaviour
         timer += Time.deltaTime;
 
 
-        if (Input.GetKey(talk) && timer > 0.3)
+        if (Input.GetKey(talk) || Input.GetKey(talk2))
         {
-            line += 1;
-            timer = 0;
+            if (timer > 0.3)
+            {
+                line += 1;
+                timer = 0;
+            }
         }
 
         if (line == 1)
@@ -48,12 +53,12 @@ public class Dialogue : MonoBehaviour
 
         if (line == 3)
         {
-            dialogue = "Yes, I want you to help me save the enchanted forest";
+            dialogue = "Yes, I want you to help me \nsave the enchanted forest";
         }
 
         if (line == 4)
         {
-            dialogue = "Funny joke old man, but I’m not really the type of person to “save an enchanted  forest”";
+            dialogue = "Funny joke old man, but \nI’m not really the type of \nperson to “save an enchanted \nforest”";
         }
 
         if (line == 5)
@@ -63,22 +68,22 @@ public class Dialogue : MonoBehaviour
 
         if (line == 6)
         {
-            dialogue = "Well how do I “save” the forest";
+            dialogue = "Well how do I “save” \nthe forest";
         }
 
         if (line == 7)
         {
-            dialogue = "For that you need the sacred ruby";
+            dialogue = "For that you need the \nsacred ruby";
         }
 
         if (line == 8)
         {
-            dialogue = "The sacred ruby…..BAHHAHAHHAHAHAH.. You are a very funny old man.";
+            dialogue = "The sacred ruby…..\nBAHHAHAHHAHAHAH.. \nYou are a very funny \nold man.";
         }
 
         if (line == 9)
         {
-            dialogue = "Where would a cranky old man like you find THE sacred ruby";
+            dialogue = "Where would a cranky \nold man like you find \nTHE sacred ruby";
         }
 
         if (line == 10)
@@ -103,17 +108,17 @@ public class Dialogue : MonoBehaviour
 
         if (line == 14)
         {
-            dialogue = "It’s not an easy task kid, the enchanted forest is a very dangerous place, especially with the sacred ruby in your hand.";
+            dialogue = "It’s not an easy task kid,\nthe enchanted forest is a \nvery dangerous place, \nespecially with the sacred \nruby in your hand.";
         }
 
         if (line == 15)
         {
-            dialogue = "(Name of antagonist) is after this ruby as well";
+            dialogue = "Methuselah is after this \nruby as well";
         }
 
         if (line == 16)
         {
-            dialogue = "(Name of antagonist)!!!!";
+            dialogue = "METHUSELAH!!!!";
         }
 
         if (line == 17)
@@ -130,8 +135,15 @@ public class Dialogue : MonoBehaviour
 
         if (line >= 20)
         {
-            square.transform.position = new Vector3(1.7f, 6, 0);
-            SceneManager.LoadScene("Lisa", LoadSceneMode.Single);
+            if (square.transform.position.y < -2)
+            {
+                SceneManager.LoadScene("Lisa", LoadSceneMode.Single);
+            }
+            if (square.transform.position.y > -2)
+            {
+                SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
+            }
         }
     }
 }
+       

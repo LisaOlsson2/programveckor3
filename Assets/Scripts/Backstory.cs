@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Backstory : MonoBehaviour
 {
-    string backstory;
+    string backstory = "F or RightClick please";
     public Text Text;
     public float line;
     float timer;
@@ -37,6 +37,7 @@ public class Backstory : MonoBehaviour
                 timer = 0;
             }
         }
+
         if (line == 1)
         {
             backstory = "The forest is under threat by mysterious and dangerous creatures, possibly triggered by the corruption.";

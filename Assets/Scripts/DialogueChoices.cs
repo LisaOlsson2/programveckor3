@@ -26,11 +26,11 @@ public class DialogueChoices : MonoBehaviour
         {
             if (Input.GetKey(up))
             {
-                transform.position = new Vector3(1.7f, -1.75f, 0);
+                transform.position = new Vector3(-4.5f, 0.45f, 0);
             }
             if (Input.GetKey(down))
             {
-                transform.position = new Vector3(1.7f, -2.3f, 0);
+                transform.position = new Vector3(-4.5f, -0.35f, 0);
             }
         }
       

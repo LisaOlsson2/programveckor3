@@ -18,6 +18,6 @@ public class XpText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        xpText.text = "Level" + GameObject.Find("Enemy").GetComponent<LevelSystem>().level.ToString() + " " + GameObject.Find("Enemy").GetComponent<LevelSystem>().xp.ToString() + "/" + GameObject.Find("Enemy").GetComponent<LevelSystem>().levelUp.ToString() +"xp";
+        xpText.text = "Level: " + GameObject.Find("Enemy").GetComponent<LevelSystem>().level.ToString() + " xp: " + GameObject.Find("Enemy").GetComponent<LevelSystem>().xp.ToString() + "/" + GameObject.Find("Enemy").GetComponent<LevelSystem>().levelUp.ToString();
     }
 }

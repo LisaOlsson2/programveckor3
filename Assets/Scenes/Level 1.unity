@@ -396,7 +396,7 @@ SpriteRenderer:
   m_Size: {x: 75, y: 45.007324}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &291422818
@@ -504,6 +504,10 @@ MonoBehaviour:
   left: 97
   up: 119
   direction: {x: 0, y: 0, z: 0}
+  health: 11
+  ruby: 0
+  items: 0
+  xp: 0
 --- !u!95 &402272519
 Animator:
   serializedVersion: 3
@@ -746,7 +750,7 @@ SpriteRenderer:
   m_Size: {x: 75, y: 45.007324}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &578761936
@@ -1777,7 +1781,7 @@ SpriteRenderer:
   m_Size: {x: 75, y: 45.007324}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2041079608
@@ -1792,7 +1796,7 @@ GameObject:
   - component: {fileID: 2041079610}
   - component: {fileID: 2041079609}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: GroundLe2
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

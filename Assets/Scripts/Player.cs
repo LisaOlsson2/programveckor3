@@ -7,7 +7,13 @@ public class Player : MonoBehaviour
 {
     Animator animator;
 
+    Instructions text;
+
+    float rotation;
+
     Playonspacebar sound;
+
+    Chest chest;
 
     [SerializeField]
     private GameObject bullet;
@@ -17,6 +23,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     KeyCode talk;
+    [SerializeField]
+    KeyCode talk2;
 
     [SerializeField]
     KeyCode right;
@@ -32,14 +40,26 @@ public class Player : MonoBehaviour
     float speed = 5;
     float shootTimer;
 
-    int directionA = 1;
+    int directionA;
+    // for animations
+
     bool grounded;
-    float health = 10;
+    public float health = 11;
     Rigidbody2D rb;
+
+    public bool ruby = false;
+
+    public int items = 0;
+    // 0 = nothing, 1 = key, 2 = gun
+
+    public float xp = 0;
+    // 12 at full
 
     // Start is called before the first frame update
     void Start()
     {
+        chest = FindObjectOfType<Chest>();
+        text = FindObjectOfType<Instructions>();
         animator = GetComponent<Animator>();
         sound = FindObjectOfType<Playonspacebar>();
         rb = GetComponent<Rigidbody2D>();
@@ -56,10 +76,16 @@ public class Player : MonoBehaviour
 
         direction = new Vector3(worldmouse.x - transform.position.x, worldmouse.y - transform.position.y, 0).normalized;
 
-        if (Input.GetKey(shoot) && shootTimer > 0.5)
+        rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        if (Input.GetKey(shoot) && shootTimer > 0.5 && items == 2)
         {
             shootTimer = 0;
-            Instantiate(bullet, transform.position + direction * 2, Quaternion.identity);
+            Instantiate(bullet, transform.position + direction * 2, Quaternion.Euler(0, 0, rotation));
+            if (text.instructions != "")
+            {
+                text.instructions = "";
+            }
         }
 
         if (Input.GetKey(right))
@@ -73,7 +99,7 @@ public class Player : MonoBehaviour
             {
                 animator.SetInteger("folium", 0);
             }
-            if (transform.position.x < 24)
+            if (transform.position.x < 25.5)
             {
                 transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
             }
@@ -89,7 +115,7 @@ public class Player : MonoBehaviour
             {
                 animator.SetInteger("folium", 1);
             }
-            if (transform.position.x > -24)
+            if (transform.position.x > -25.5)
             {
                 transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
             }
@@ -106,6 +132,30 @@ public class Player : MonoBehaviour
                 animator.SetInteger("folium", 3);
             }
         }
+
+        if (Input.GetKey(right) == false && Input.GetKey(left) == false && grounded == true)
+        {
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 5);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 3);
+            }
+        }
+
+        if (health <= 0)
+        {
+            if (directionA ==1)
+            {
+                animator.SetInteger("folium", 7);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 6);
+            }
+        }
     }
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -117,18 +167,55 @@ public class Player : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKey(talk) && collision.gameObject.name == "DialogueTrigger1")
+        if (collision.gameObject.name == "ShroomKey")
         {
-            SceneManager.LoadScene("Dialogue", LoadSceneMode.Single);
+            if (Input.GetKey(talk) || Input.GetKey(talk2))
+            {
+                items = 1;
+                Destroy(collision.gameObject);
+            }
         }
 
-        if (Input.GetKey(talk) && collision.gameObject.name == "DialogueTrigger2")
+        if (collision.gameObject.name == "ShroomChest_Closed" && items == 1)
         {
-            SceneManager.LoadScene("Dialogue2", LoadSceneMode.Single);
+            if (Input.GetKey(talk) || Input.GetKey(talk2))
+            {
+                text.instructions = "Shoot with Leftclick";
+                items = 2;
+                chest.transform.position = new Vector3(6.5f, 4, 0);
+                Destroy(collision.gameObject);
+            }
+        }
+
+        if (Input.GetKey(up) && collision.gameObject.tag == "SkyGround")
+        {
+            rb.AddForce(transform.up * 8, ForceMode2D.Impulse);
+            sound.someSound.Play();
+        }
+        if (Input.GetKey(talk) || Input.GetKey(talk2))
+        {
+            if (collision.gameObject.name == "DialogueTrigger1" && items == 2)
+            {
+                SceneManager.LoadScene("Dialogue", LoadSceneMode.Single);
+            }
+        }
+
+        if (Input.GetKey(talk) || Input.GetKey(talk2))
+        {
+            if (collision.gameObject.name == "DialogueTrigger2")
+            {
+                SceneManager.LoadScene("Dialogue2", LoadSceneMode.Single);
+            }
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.name == "GroundLe2")
+        {
+            items = 2;
+            ruby = true;
+        }
+
         if (collision.gameObject.tag == "Ground")
         {
             grounded = true;
@@ -144,6 +231,15 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 8);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 9);
+            }
+
             health -= 1;
         }
     }
@@ -159,6 +255,71 @@ public class Player : MonoBehaviour
             if (directionA == 2)
             {
                 animator.SetInteger("folium", 2);
+            }
+        }
+    }
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "ShroomKey")
+        {
+            text.instructions = "";
+        }
+        if (collision.gameObject.name == "New Piskel")
+        {
+            text.instructions = "";
+        }
+        if (collision.gameObject.name == "ShroomChest_Closed")
+        {
+            text.instructions = "";
+        }
+        if (collision.gameObject.name == "DialogueTrigger1")
+        {
+            text.instructions = "";
+        }
+
+        if (collision.gameObject.tag == "SkyGround")
+        {
+            grounded = false;
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 4);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 2);
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "ShroomChest_Closed" && items == 0)
+        {
+            text.instructions = "Find a key";
+        }
+        if (collision.gameObject.name == "DialogueTrigger1" && items != 2)
+        {
+            text.instructions = "I Can't let you proceed unarmed";
+        }
+        if (collision.gameObject.name == "New Piskel")
+        {
+            text.instructions = "Helo";
+        }
+
+        if (collision.gameObject.name == "ShroomKey")
+        {
+            text.instructions = "F or RightClick to Interact";
+        }
+        if (collision.gameObject.tag == "SkyGround")
+        {
+            grounded = true;
+
+            if (directionA == 1)
+            {
+                animator.SetInteger("folium", 5);
+            }
+            if (directionA == 2)
+            {
+                animator.SetInteger("folium", 3);
             }
         }
     }

@@ -700,7 +700,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xpText: {fileID: 1446498156}
-  levelText: {fileID: 1446498156}
 --- !u!114 &1446498156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,7 +733,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 0xp
+  m_Text: Level1 0xp
 --- !u!222 &1446498157
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -891,3 +890,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xp: 0
   level: 1
+  levelUp: 1
