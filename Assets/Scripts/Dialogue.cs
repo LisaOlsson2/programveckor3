@@ -141,7 +141,7 @@ public class Dialogue : MonoBehaviour
             }
             if (square.transform.position.y > -2)
             {
-                SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
+                SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
             }
         }
     }
