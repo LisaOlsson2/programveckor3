@@ -2149,7 +2149,7 @@ GameObject:
   - component: {fileID: 937947706}
   m_Layer: 0
   m_Name: Enemy_2_Walk_L (1) 1_0
-  m_TagString: Enemy
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2296,7 +2296,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!1 &950137345
 GameObject:
   m_ObjectHideFlags: 0
