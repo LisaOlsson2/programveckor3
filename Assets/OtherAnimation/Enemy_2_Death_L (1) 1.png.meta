@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 152da60ac0499e84bb517f4e472c3a91
+guid: 0e26af37240315c4ea172bf1125cc17d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6583362013431333789
-    second: Enemy_2_Death_L_0
+      213: 8556882697572096669
+    second: Enemy_2_Death_L (1) 1_0
   - first:
-      213: -1165675435848036597
-    second: Enemy_2_Death_L_1
+      213: 221713595793169030
+    second: Enemy_2_Death_L (1) 1_1
   - first:
-      213: 2630084199188943381
-    second: Enemy_2_Death_L_2
+      213: 4324457051406465991
+    second: Enemy_2_Death_L (1) 1_2
   - first:
-      213: 1022398060931130324
-    second: Enemy_2_Death_L_3
+      213: 3053646073454195651
+    second: Enemy_2_Death_L (1) 1_3
   - first:
-      213: 7582156950206125304
-    second: Enemy_2_Death_L_4
+      213: -4403348671938123151
+    second: Enemy_2_Death_L (1) 1_4
   - first:
-      213: 9027598247283373012
-    second: Enemy_2_Death_L_5
+      213: -1579192952348487183
+    second: Enemy_2_Death_L (1) 1_5
   - first:
-      213: -8016518548817520608
-    second: Enemy_2_Death_L_6
+      213: 7833832940109617035
+    second: Enemy_2_Death_L (1) 1_6
   - first:
-      213: 4143094821983906787
-    second: Enemy_2_Death_L_7
+      213: 2963788352608608022
+    second: Enemy_2_Death_L (1) 1_7
   - first:
-      213: -7287787537361456383
-    second: Enemy_2_Death_L_8
+      213: -4395456204513246388
+    second: Enemy_2_Death_L (1) 1_8
   - first:
-      213: -2531120419729572258
-    second: Enemy_2_Death_L_9
+      213: -5219427038919586218
+    second: Enemy_2_Death_L (1) 1_9
   - first:
-      213: 8565648100746801745
-    second: Enemy_2_Death_L_10
+      213: -913130799362263006
+    second: Enemy_2_Death_L (1) 1_10
   - first:
-      213: 555519149842059393
-    second: Enemy_2_Death_L_11
+      213: 1544614952891025641
+    second: Enemy_2_Death_L (1) 1_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy_2_Death_L_0
+      name: Enemy_2_Death_L (1) 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d93006efedccc5b50800000000000000
-      internalID: 6583362013431333789
+      spriteID: d9a98752a7720c670800000000000000
+      internalID: 8556882697572096669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_2_Death_L_1
+      name: Enemy_2_Death_L (1) 1_1
       rect:
         serializedVersion: 2
         x: 560
@@ -162,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0f01eafd50b2dfe0800000000000000
-      internalID: -1165675435848036597
+      spriteID: 68a5027375fa31300800000000000000
+      internalID: 221713595793169030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_2_Death_L_2
+      name: Enemy_2_Death_L (1) 1_2
       rect:
         serializedVersion: 2
         x: 1120
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5125606f4afef7420800000000000000
-      internalID: 2630084199188943381
+      spriteID: 7cbf38bb6ce830c30800000000000000
+      internalID: 4324457051406465991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_2_Death_L_3
+      name: Enemy_2_Death_L (1) 1_3
       rect:
         serializedVersion: 2
         x: 0
@@ -204,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d329d89e99403e00800000000000000
-      internalID: 1022398060931130324
+      spriteID: 3c3f006cceab06a20800000000000000
+      internalID: 3053646073454195651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_2_Death_L_4
+      name: Enemy_2_Death_L (1) 1_4
       rect:
         serializedVersion: 2
         x: 560
@@ -225,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f49b40039b393960800000000000000
-      internalID: 7582156950206125304
+      spriteID: 17aa0fa76b924e2c0800000000000000
+      internalID: -4403348671938123151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_2_Death_L_5
+      name: Enemy_2_Death_L (1) 1_5
       rect:
         serializedVersion: 2
         x: 1120
@@ -246,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d3b34096c8784d70800000000000000
-      internalID: 9027598247283373012
+      spriteID: 1f1d7737064951ae0800000000000000
+      internalID: -1579192952348487183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_2_Death_L_6
+      name: Enemy_2_Death_L (1) 1_6
       rect:
         serializedVersion: 2
         x: 0
@@ -267,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 028d66a6ada9fb090800000000000000
-      internalID: -8016518548817520608
+      spriteID: b87dcf8bd8d57bc60800000000000000
+      internalID: 7833832940109617035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_2_Death_L_7
+      name: Enemy_2_Death_L (1) 1_7
       rect:
         serializedVersion: 2
         x: 560
@@ -288,14 +288,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3eb6c1f1aca3f7930800000000000000
-      internalID: 4143094821983906787
+      spriteID: 61f1daacdcd712920800000000000000
+      internalID: 2963788352608608022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_2_Death_L_8
+      name: Enemy_2_Death_L (1) 1_8
       rect:
         serializedVersion: 2
         x: 1120
@@ -309,14 +309,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1033d0dd8d39cda90800000000000000
-      internalID: -7287787537361456383
+      spriteID: c438330ced33003c0800000000000000
+      internalID: -4395456204513246388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_2_Death_L_9
+      name: Enemy_2_Death_L (1) 1_9
       rect:
         serializedVersion: 2
         x: 0
@@ -330,14 +330,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5ef7428367afdcd0800000000000000
-      internalID: -2531120419729572258
+      spriteID: 65e012603ced097b0800000000000000
+      internalID: -5219427038919586218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_2_Death_L_10
+      name: Enemy_2_Death_L (1) 1_10
       rect:
         serializedVersion: 2
         x: 560
@@ -351,14 +351,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 152330c909b4fd670800000000000000
-      internalID: 8565648100746801745
+      spriteID: 2283b8e3068e353f0800000000000000
+      internalID: -913130799362263006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_2_Death_L_11
+      name: Enemy_2_Death_L (1) 1_11
       rect:
         serializedVersion: 2
         x: 1120
@@ -372,8 +372,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 180534839b995b700800000000000000
-      internalID: 555519149842059393
+      spriteID: 9e883ddad139f6510800000000000000
+      internalID: 1544614952891025641
       vertices: []
       indices: 
       edges: []
