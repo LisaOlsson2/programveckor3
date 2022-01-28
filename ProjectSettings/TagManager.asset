@@ -12,6 +12,8 @@ TagManager:
   - Enemy
   - SkyGround
   - Level2
+  - platform
+  - ramla
   layers:
   - Default
   - TransparentFX
