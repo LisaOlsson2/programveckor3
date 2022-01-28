@@ -4,27 +4,21 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    EnemyAlt enemy;
-    int direction;
+    Player player;
+    float speed = 4;
 
     // Start is called before the first frame update
     void Start()
     {
-        enemy = FindObjectOfType<EnemyAlt>();
-        direction = enemy.direction;
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (direction == 1)
-        {
-            transform.position += new Vector3(10, 0, 0) * Time.deltaTime;
-        }
-        if (direction == 2)
-        {
-            transform.position += new Vector3(-10, 0, 0) * Time.deltaTime;
-        }
+        transform.position += new Vector3(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y, 0).normalized * Time.deltaTime * speed;
+
+
         if (transform.position.x > 26 || transform.position.x < -26)
         {
             Destroy(gameObject);
