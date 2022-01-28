@@ -190,7 +190,7 @@ public class Player : MonoBehaviour
         if (dmg == true)
         {
             dmgTimer += Time.deltaTime;
-            if (dmgTimer >= 1.5)
+            if (dmgTimer >= 1)
             {
                 dmgTimer = 0;
                 dmg = false;
