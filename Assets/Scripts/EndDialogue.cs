@@ -66,20 +66,25 @@ public class EndDialogue : MonoBehaviour
 
         if (line == 7)
         {
-            dialogue = "This road is too dangerous for an old man like me to complete on his own while holding the worlds most sacred item, now give it to me so I can save the forest";
+            dialogue = "This road is too dangerous for an old man like me to complete on his own while holding the worlds most sacred item. Now give it to me so I can save the forest";
         }
-       
+
         if (line == 8)
         {
-            dialogue = "YES\nNO";
-            square.transform.position = new Vector3(1.7f, -1.75f, 0);
-            line += 1;
+            SceneManager.LoadScene("End", LoadSceneMode.Single);
         }
-       //if (line >= 9)
-       //{
-            //square.transform.position = new Vector3(1.7f, 6, 0);
-            //SceneManager.LoadScene("Lisa", LoadSceneMode.Single);
-      //}
+
+        // if (line == 8)
+        // {
+        //dialogue = "YES\nNO";
+        //square.transform.position = new Vector3(1.7f, -1.75f, 0);
+        //line += 1;
+        // }
+        //if (line >= 9)
+        //{
+        //square.transform.position = new Vector3(1.7f, 6, 0);
+        //SceneManager.LoadScene("Lisa", LoadSceneMode.Single);
+        //}
     }
 
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy2 : MonoBehaviour
 {
+    Player player;
     [SerializeField, Range(0, 5)]
     float speed;
     float hp = 5;
@@ -11,6 +12,7 @@ public class Enemy2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<Player>();
         Targets = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
@@ -26,6 +28,14 @@ public class Enemy2 : MonoBehaviour
             hp -= 1;
             if (hp <= 0)
             {
+                if (player.scene.name == "Level 1")
+                {
+                    player.xp += 6;
+                }
+                if (player.scene.name == "Level 3")
+                {
+                    player.xp += 1;
+                }
                 Destroy(gameObject);
             }
         }

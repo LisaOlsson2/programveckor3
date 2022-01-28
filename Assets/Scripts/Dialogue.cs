@@ -53,12 +53,12 @@ public class Dialogue : MonoBehaviour
 
         if (line == 3)
         {
-            dialogue = "Yes, I want you to help me \nsave the enchanted forest";
+            dialogue = "Yes, I want you to help me save the enchanted forest";
         }
 
         if (line == 4)
         {
-            dialogue = "Funny joke old man, but \nI’m not really the type of \nperson to “save an enchanted \nforest”";
+            dialogue = "Funny joke old man, but I’m not really the type of person to “save an enchanted forest”";
         }
 
         if (line == 5)
@@ -68,22 +68,22 @@ public class Dialogue : MonoBehaviour
 
         if (line == 6)
         {
-            dialogue = "Well how do I “save” \nthe forest";
+            dialogue = "Well how do I “save” the forest";
         }
 
         if (line == 7)
         {
-            dialogue = "For that you need the \nsacred ruby";
+            dialogue = "For that you need the sacred ruby";
         }
 
         if (line == 8)
         {
-            dialogue = "The sacred ruby…..\nBAHHAHAHHAHAHAH.. \nYou are a very funny \nold man.";
+            dialogue = "The sacred ruby…..BAHHAHAHHAHAHAH.. You are a very funny old man.";
         }
 
         if (line == 9)
         {
-            dialogue = "Where would a cranky \nold man like you find \nTHE sacred ruby";
+            dialogue = "Where would a cranky old man like you find THE sacred ruby";
         }
 
         if (line == 10)
@@ -108,12 +108,12 @@ public class Dialogue : MonoBehaviour
 
         if (line == 14)
         {
-            dialogue = "It’s not an easy task kid,\nthe enchanted forest is a \nvery dangerous place, \nespecially with the sacred \nruby in your hand.";
+            dialogue = "It’s not an easy task kid, the enchanted forest is a very dangerous place, especially with the sacred ruby in your hand.";
         }
 
         if (line == 15)
         {
-            dialogue = "Methuselah is after this \nruby as well";
+            dialogue = "Methuselah is after this ruby as well";
         }
 
         if (line == 16)
@@ -141,9 +141,8 @@ public class Dialogue : MonoBehaviour
             }
             if (square.transform.position.y > -2)
             {
-                SceneManager.LoadScene("Level 1", LoadSceneMode.Single);
+                SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
             }
         }
     }
 }
-       

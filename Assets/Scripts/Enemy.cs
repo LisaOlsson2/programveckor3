@@ -9,10 +9,12 @@ public class Enemy : MonoBehaviour
     public bool goRight;
     float hp = 3;
     float timer;
+
+    Player player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -50,6 +52,14 @@ public class Enemy : MonoBehaviour
             hp -= 1;
             if (hp <= 0)
             {
+                if (player.scene.name == "Level 1")
+                {
+                    player.xp += 6;
+                }
+                if (player.scene.name == "Level 3")
+                {
+                    player.xp += 1;
+                }
                 Destroy(gameObject);
             }
         }

@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     Animator animator;
 
+    public Scene scene;
+
     Instructions text;
 
     float rotation;
@@ -48,12 +50,15 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
 
     public bool ruby = false;
+    bool dmg = false;
 
     public int items = 0;
     // 0 = nothing, 1 = key, 2 = gun
 
     public float xp = 0;
     // 12 at full
+
+    float dmgTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +68,7 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         sound = FindObjectOfType<Playonspacebar>();
         rb = GetComponent<Rigidbody2D>();
+        scene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -82,24 +88,42 @@ public class Player : MonoBehaviour
         {
             shootTimer = 0;
             Instantiate(bullet, transform.position + direction * 2, Quaternion.Euler(0, 0, rotation));
-            if (text.instructions != "")
+            if (scene.name == "Lisa")
             {
-                text.instructions = "";
+                if (text.instructions != "")
+                {
+                    text.instructions = "";
+                }
             }
         }
 
         if (Input.GetKey(right))
         {
             directionA = 1;
-            if (grounded == false)
+            if (dmg == false)
             {
-                animator.SetInteger("folium", 4);
+                if (grounded == false)
+                {
+                    animator.SetInteger("folium", 4);
+                }
+                if (grounded == true)
+                {
+                    animator.SetInteger("folium", 0);
+                }
             }
-            if (grounded == true)
+            if (transform.position.x < 25.5 && scene.name == "Lisa")
             {
-                animator.SetInteger("folium", 0);
+                transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
             }
-            if (transform.position.x < 25.5)
+            if (transform.position.x < 25.5 && scene.name == "Level 1")
+            {
+                transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            }
+            if (transform.position.x < 25.5 && scene.name == "Level 2")
+            {
+                transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            }
+            if (transform.position.x < 73.5 && scene.name == "Level 3")
             {
                 transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
             }
@@ -107,13 +131,16 @@ public class Player : MonoBehaviour
         if (Input.GetKey(left))
         {
             directionA = 2;
-            if (grounded == false)
+            if (dmg == false)
             {
-                animator.SetInteger("folium", 2);
-            }
-            if (grounded == true)
-            {
-                animator.SetInteger("folium", 1);
+                if (grounded == false)
+                {
+                    animator.SetInteger("folium", 2);
+                }
+                if (grounded == true)
+                {
+                    animator.SetInteger("folium", 1);
+                }
             }
             if (transform.position.x > -25.5)
             {
@@ -121,19 +148,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(right) == false && Input.GetKey(left) == false && grounded == true)
-        {
-            if (directionA == 1)
-            {
-                animator.SetInteger("folium", 5);
-            }
-            if (directionA == 2)
-            {
-                animator.SetInteger("folium", 3);
-            }
-        }
-
-        if (Input.GetKey(right) == false && Input.GetKey(left) == false && grounded == true)
+        if (Input.GetKey(right) == false && Input.GetKey(left) == false && grounded == true && dmg == false)
         {
             if (directionA == 1)
             {
@@ -147,19 +162,59 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            if (directionA ==1)
+            if (dmg == false)
             {
-                animator.SetInteger("folium", 7);
+                SceneManager.LoadScene(scene.name);
             }
-            if (directionA == 2)
+            if (dmg == true)
             {
-                animator.SetInteger("folium", 6);
+                if (directionA == 1)
+                {
+                    animator.SetInteger("folium", 7);
+                }
+                if (directionA == 2)
+                {
+                    animator.SetInteger("folium", 6);
+                }
             }
+        }
+        if (xp > 12)
+        {
+            xp = 12;
+        }
+        if (scene.name == "Level 1" || scene.name == "Level 2" || scene.name == "Level 3")
+        {
+            items = 2;
+            ruby = true;
+        }
+        if (dmg == true)
+        {
+            dmgTimer += Time.deltaTime;
+            if (dmgTimer >= 1.5)
+            {
+                dmgTimer = 0;
+                dmg = false;
+            }
+            if (health > 0)
+            {
+                if (directionA == 1)
+                {
+                    animator.SetInteger("folium", 8);
+                }
+                if (directionA == 2)
+                {
+                    animator.SetInteger("folium", 9);
+                }
+            }
+        }
+        if (transform.position.x < -25.5)
+        {
+            transform.position = new Vector3(-25.4f, -9.8f, 0);
         }
     }
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (Input.GetKey(up) && collision.gameObject.tag == "Ground")
+        if (Input.GetKey(up) && collision.gameObject.tag == "Ground" && dmg == false)
         {
             rb.AddForce(transform.up * 4, ForceMode2D.Impulse);
             sound.someSound.Play();
@@ -200,22 +255,31 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (collision.gameObject.name == "Level2Transport" && xp >= 12)
+        {
+            if (Input.GetKey(talk) || Input.GetKey(talk2))
+            {
+                SceneManager.LoadScene("Level 2", LoadSceneMode.Single);
+            }
+        }
+        if (collision.gameObject.name == "DialogueTrigger3" && xp >= 12)
+        {
+            if (Input.GetKey(talk) || Input.GetKey(talk2))
+            {
+                SceneManager.LoadScene("EndDialogue", LoadSceneMode.Single);
+            }
+        }
+
         if (Input.GetKey(talk) || Input.GetKey(talk2))
         {
             if (collision.gameObject.name == "DialogueTrigger2")
             {
-                SceneManager.LoadScene("Dialogue2", LoadSceneMode.Single);
+                SceneManager.LoadScene("Level 3", LoadSceneMode.Single);
             }
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "GroundLe2")
-        {
-            items = 2;
-            ruby = true;
-        }
-
         if (collision.gameObject.tag == "Ground")
         {
             grounded = true;
@@ -229,18 +293,23 @@ public class Player : MonoBehaviour
                 animator.SetInteger("folium", 3);
             }
         }
-        if (collision.gameObject.tag == "Enemy")
+        if (dmg == false)
         {
-            if (directionA == 1)
+            if (collision.gameObject.tag == "Bullet")
             {
-                animator.SetInteger("folium", 8);
+                dmg = true;
+                health -= 1;
             }
-            if (directionA == 2)
+            if (collision.gameObject.tag == "Enemy2")
             {
-                animator.SetInteger("folium", 9);
+                dmg = true;
+                health -= 2;
             }
-
-            health -= 1;
+            if (collision.gameObject.tag == "Enemy")
+            {
+                dmg = true;
+                health -= 1;
+            }
         }
     }
     void OnCollisionExit2D(Collision2D collision)
@@ -276,7 +345,18 @@ public class Player : MonoBehaviour
         {
             text.instructions = "";
         }
-
+        if (collision.gameObject.name == "DialogueTrigger2")
+        {
+            text.instructions = "";
+        }
+        if (collision.gameObject.name == "DialogueTrigger3")
+        {
+            text.instructions = "";
+        }
+        if (collision.gameObject.name == "Level2Transport")
+        {
+            text.instructions = "";
+        }
         if (collision.gameObject.tag == "SkyGround")
         {
             grounded = false;
@@ -300,11 +380,22 @@ public class Player : MonoBehaviour
         {
             text.instructions = "I Can't let you proceed unarmed";
         }
+        if (collision.gameObject.name == "Level2Transport" && xp < 12)
+        {
+            text.instructions = "kill more enemies please";
+        }
+        if (collision.gameObject.name == "DialogueTrigger2" && xp < 12)
+        {
+            text.instructions = "kill more enemies";
+        }
+        if (collision.gameObject.name == "DialogueTrigger3" && xp < 12)
+        {
+            text.instructions = "kill more enemies";
+        }
         if (collision.gameObject.name == "New Piskel")
         {
             text.instructions = "Helo";
         }
-
         if (collision.gameObject.name == "ShroomKey")
         {
             text.instructions = "F or RightClick to Interact";
@@ -312,7 +403,6 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "SkyGround")
         {
             grounded = true;
-
             if (directionA == 1)
             {
                 animator.SetInteger("folium", 5);
