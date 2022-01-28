@@ -19,7 +19,7 @@ public class EnemyBullet : MonoBehaviour
         transform.position += new Vector3(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y, 0).normalized * Time.deltaTime * speed;
 
 
-        if (transform.position.x > 26 || transform.position.x < -26)
+        if (transform.position.x > 26 || transform.position.x < -26 || transform.position.y < -12 || transform.position.y > 40)
         {
             Destroy(gameObject);
         }
