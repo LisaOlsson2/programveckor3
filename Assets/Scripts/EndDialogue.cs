@@ -16,6 +16,8 @@ public class EndDialogue : MonoBehaviour
 
     [SerializeField]
     KeyCode Talk;
+    [SerializeField]
+    KeyCode Talk2;
 
     void Start()
     {

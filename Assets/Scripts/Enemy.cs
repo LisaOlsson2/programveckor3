@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    //Theo
     [SerializeField]
     float speed;
     public bool goRight;
