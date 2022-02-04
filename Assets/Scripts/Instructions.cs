@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Lisa
+
 public class Instructions : MonoBehaviour
 {
+    // what the instructions shall be
     public string instructions = "";
+
+    // to change the text
     public Text text;
 
     // Start is called before the first frame update
@@ -17,6 +22,6 @@ public class Instructions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = instructions;
+        text.text = instructions; // so that it updates
     }
 }

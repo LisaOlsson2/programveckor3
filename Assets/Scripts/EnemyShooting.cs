@@ -14,15 +14,11 @@ public class EnemyShooting : MonoBehaviour
     {
         
         timer += Time.deltaTime;
-        if (timer >= 3 && GetComponent<Enemy>().goRight == true)
+        if (timer >= 3) 
         {
-            Instantiate(Bullet, transform.position = new Vector3(1, 0, 0), Quaternion.identity);
+            Instantiate(Bullet, transform.position, Quaternion.identity); //fienden skjuter var 3:e sekund
             timer = 0;
         }
-        if (timer >= 3 && GetComponent<Enemy>().goRight == false)
-        {
-            Instantiate(Bullet, transform.position = new Vector3(-1, 0, 0), Quaternion.identity);
-            timer = 0;
-        }
+        
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// Lisa, men Ella skrev vad de skulle säga
+
 public class Dialogue : MonoBehaviour
 {
     string dialogue;

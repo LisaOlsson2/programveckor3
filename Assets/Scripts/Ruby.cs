@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Lisa
+
+// just to show if the player has the ruby or not
+
 public class Ruby : MonoBehaviour
 {
+    // to check if the player has the ruby
     Player player;
+
+    // to get the cameras position
     CameraFollow cam;
 
     // Start is called before the first frame update
@@ -17,11 +24,13 @@ public class Ruby : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if the player has the ruby
         if (player.ruby == true)
         {
+            // where it'll be in relation to the camera
             transform.position = new Vector3(cam.transform.position.x - 6.5f, cam.transform.position.y - 3.8f, 0);
         }
         else
-            transform.position = new Vector3(-27, -9.8f, 0);
+            transform.position = new Vector3(-27, -9.8f, 0); // being out of view when the player doesn't have the ruby
     }
 }

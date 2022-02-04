@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Lisa
+
 public class Health : MonoBehaviour
 {
+    // so that it can have a sprite assigned to it
     [SerializeField]
     int h;
+
+    // it's all pretty much the same as with xp
 
     CameraFollow cam;
     Player player;

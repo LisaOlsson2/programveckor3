@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Lisa
+
 public class Portraits : MonoBehaviour
 {
+    // each portrait has an int assigned to it
     [SerializeField]
     int portrait;
 
+    // which lines the portraits will be shown at
     Dialogue dialogue;
 
     // Start is called before the first frame update
     void Start()
     {
         dialogue = FindObjectOfType<Dialogue>();
+
+        // startind outside of what's visible
         transform.position = new Vector3(-6.9f, -8, 0);
     }
 

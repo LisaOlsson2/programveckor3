@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// Ella
+
 public class EndDialogue : MonoBehaviour
 {
 
@@ -12,7 +14,7 @@ public class EndDialogue : MonoBehaviour
     public float line;
     float timer;
 
-    DialogueChoices square;
+    // DialogueChoices square;
 
     [SerializeField]
     KeyCode Talk;
@@ -21,7 +23,7 @@ public class EndDialogue : MonoBehaviour
 
     void Start()
     {
-        square = FindObjectOfType<DialogueChoices>();
+        // square = FindObjectOfType<DialogueChoices>();
         text = GetComponent<Text>();
     }
 

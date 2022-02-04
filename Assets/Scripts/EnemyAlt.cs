@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Lisa
+
 public class EnemyAlt : MonoBehaviour
 {
+    // for its position so that it can do stuff in the right direction, and also to increase its xp on death
     Player player;
+
     Animator animator;
     [SerializeField]
     private GameObject eBullet;
 
-    int direction;
-    float timer;
+    // movement
+    int direction; // 1 = right, 2 = left
     float speed = 2;
+
+    float timer; // shooting timer
+    
     float health = 5;
 
+    // damage stuff
     bool dmg;
     float dmgTimer;
 
@@ -28,6 +36,7 @@ public class EnemyAlt : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+
         if (player.transform.position.x > transform.position.x && timer <= 2.3 && dmg == false)
         {
             direction = 1;
