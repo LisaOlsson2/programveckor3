@@ -171,6 +171,10 @@ public class Player : MonoBehaviour
             {
                 transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
             }
+            if (transform.position.x < 73.5 && scene.name == "Boss Battle")
+            {
+                transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            }
         }
         // moving left
         if (Input.GetKey(left))
@@ -232,7 +236,7 @@ public class Player : MonoBehaviour
             xp = 12;
         }
         // having the ruby and gun in the scenes below
-        if (scene.name == "Level 1" || scene.name == "Level 2" || scene.name == "Level 3" || scene.name == "Level 2.1")
+        if (scene.name == "Level 1" || scene.name == "Level 2" || scene.name == "Level 3" || scene.name == "Level 2.1" || scene.name == "Boss Battle")
         {
             items = 2;
             ruby = true;

@@ -25,11 +25,19 @@ public class CameraFollow : MonoBehaviour
         {
             transform.position = new Vector3(player.transform.position.x, transform.position.y, -10);
         }
-        if (player.transform.position.x > -16.9 && player.transform.position.x < 16.9 && player.scene.name == "Level 2")
+        if (player.transform.position.x > -16.9 && player.transform.position.x < 32 && player.scene.name == "Level 2")
+        {
+            transform.position = new Vector3(player.transform.position.x, transform.position.y, -10);
+        }
+        if (player.transform.position.x > -16.9 && player.transform.position.x < 32 && player.scene.name == "Level 2.1")
         {
             transform.position = new Vector3(player.transform.position.x, transform.position.y, -10);
         }
         if (player.transform.position.x > -16.9 && player.transform.position.x < 72 && player.scene.name == "Level 3")
+        {
+            transform.position = new Vector3(player.transform.position.x, transform.position.y, -10);
+        }
+        if (player.transform.position.x > -16.9 && player.transform.position.x < 72 && player.scene.name == "Boss Battle")
         {
             transform.position = new Vector3(player.transform.position.x, transform.position.y, -10);
         }
