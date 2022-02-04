@@ -24,13 +24,10 @@ public class EnemyBullet : MonoBehaviour
         // moving the bullet
         transform.position += new Vector3(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y, 0).normalized * Time.deltaTime * speed;
 
-        // destroying the bullet outside the borders in these specific scenes
-        if (player.scene.name == "Level 2" || player.scene.name == "Level 2.1")
+        // destroying the bullet outside the borders
+        if (transform.position.x > 100 || transform.position.x < -26 || transform.position.y < -12 || transform.position.y > 40)
         {
-            if (transform.position.x > 26 || transform.position.x < -26 || transform.position.y < -12 || transform.position.y > 40)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
     void OnCollisionEnter2D(Collision2D collision)

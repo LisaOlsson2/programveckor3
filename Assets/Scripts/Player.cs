@@ -337,7 +337,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKey(talk) || Input.GetKey(talk2))
             {
-                SceneManager.LoadScene("Level 2.1", LoadSceneMode.Single);
+                SceneManager.LoadScene("Level 2", LoadSceneMode.Single);
             }
         }
 

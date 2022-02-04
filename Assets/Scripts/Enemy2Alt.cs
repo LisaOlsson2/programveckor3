@@ -63,7 +63,9 @@ public class Enemy2Alt : MonoBehaviour
                     animator.SetInteger("en2", 4);
                 }
                 else
+                {
                     animator.SetInteger("en2", 3);
+                }
             }
             if (direction == 2)
             {
@@ -72,7 +74,9 @@ public class Enemy2Alt : MonoBehaviour
                     animator.SetInteger("en2", 5);
                 }
                 else
+                {
                     animator.SetInteger("en2", 2);
+                }
             }
             timer += Time.deltaTime;
         }

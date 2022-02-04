@@ -28,19 +28,7 @@ public class PBullet : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime; // movement
 
         // where it gets destroyed
-        if (transform.position.y > 40 || transform.position.x < -26 || transform.position.x > 26 && player.scene.name == "Lisa")
-        {
-            Destroy(gameObject);
-        }
-        if (transform.position.y > 40 || transform.position.x < -26 || transform.position.x > 26 && player.scene.name == "Level 1")
-        {
-            Destroy(gameObject);
-        }
-        if (transform.position.y > 40 || transform.position.x < -26 || transform.position.x > 26 && player.scene.name == "Level 2")
-        {
-            Destroy(gameObject);
-        }
-        if (transform.position.y > 40 || transform.position.x < -26 || transform.position.x > 78 && player.scene.name == "Level 3")
+        if (transform.position.y > 40 || transform.position.x < -26 || transform.position.x > 78)
         {
             Destroy(gameObject);
         }
