@@ -150,7 +150,7 @@ public class Player : MonoBehaviour
             }
 
             // because the borders are different in different scenes
-            // so i just realised i could have had the border as a variable that changed for every scene, so that one of these would be enough, but now they exist already so i'll keep them
+            // so i just realised i could have had the border as a float that changed for every scene, so that one of these would be enough, but now they exist already so i'll keep them
             if (transform.position.x < 25.5 && scene.name == "Lisa")
             {
                 transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;

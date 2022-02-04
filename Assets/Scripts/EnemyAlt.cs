@@ -45,7 +45,9 @@ public class EnemyAlt : MonoBehaviour
                 animator.SetInteger("enemy1", 0);
             }
             else
+            {
                 animator.SetInteger("enemy1", 5);
+            }
         }
         if (player.transform.position.x < transform.position.x && timer <= 2.3 && dmg == false)
         {
@@ -55,7 +57,9 @@ public class EnemyAlt : MonoBehaviour
                 animator.SetInteger("enemy1", 1);
             }
             else
+            {
                 animator.SetInteger("enemy1", 3);
+            }
         }
 
         timer += Time.deltaTime;
@@ -104,7 +108,9 @@ public class EnemyAlt : MonoBehaviour
                     animator.SetInteger("enemy1", 7);
                 }
                 else
+                {
                     animator.SetInteger("enemy1", 8);
+                }
             }
             if (direction == 2)
             {
@@ -113,7 +119,9 @@ public class EnemyAlt : MonoBehaviour
                     animator.SetInteger("enemy1", 6);
                 }
                 else
+                {
                     animator.SetInteger("enemy1", 9);
+                }
             }
             dmgTimer += Time.deltaTime;
         }
