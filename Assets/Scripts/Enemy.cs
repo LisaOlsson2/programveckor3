@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
             goRight = false;
             if (timer >= 4)
             {
-                timer = 0;  // goRight = true i 2 sekunder och false i 2 sekunder - Theo
+                timer = 0;  // goRight = true i 2 sekunder och false i 2 sekunder - Theo 
             } 
         }
     }
