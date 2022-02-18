@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-// Lisa, men Ella skrev vad de skulle säga
+// Lisa skrev koden
+// Ella skrev manus
 
 public class Dialogue : MonoBehaviour
 {
@@ -30,7 +31,9 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // having the text as whatever is in the string
         text.text = dialogue;
+
         timer += Time.deltaTime;
 
 
@@ -137,10 +140,13 @@ public class Dialogue : MonoBehaviour
 
         if (line >= 20)
         {
+            // goin back to the previous scene if the player answers no
             if (square.transform.position.y < -2)
             {
                 SceneManager.LoadScene("Lisa", LoadSceneMode.Single);
             }
+
+            // proceeding to level one if the player answers yes
             if (square.transform.position.y > -2)
             {
                 SceneManager.LoadScene("Level 1", LoadSceneMode.Single);

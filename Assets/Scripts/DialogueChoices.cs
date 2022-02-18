@@ -24,8 +24,12 @@ public class DialogueChoices : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // it's moved at first in the dialogue script
+        // everything in this script could have been in the dialogue script actually
+
         if (dialogue.line == 19)
         {
+            // moving up and down to choose "YES" or "NO"
             if (Input.GetKey(up))
             {
                 transform.position = new Vector3(1.7f, -1.75f, 0);

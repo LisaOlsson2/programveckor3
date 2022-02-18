@@ -27,7 +27,7 @@ public class Portraits : MonoBehaviour
     {
         if (portrait == 1)
         {
-            if (dialogue.line == 2 || dialogue.line == 18)
+            if (dialogue.line == 2 || dialogue.line == 18 || dialogue.line == 19)
             {
                 transform.position = new Vector3(-6.9f, -2.9f, 0);
             }

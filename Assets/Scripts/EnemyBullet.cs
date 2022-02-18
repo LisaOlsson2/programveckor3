@@ -9,7 +9,7 @@ public class EnemyBullet : MonoBehaviour
     // to get the player's position
     Player player;
 
-    // just the speed of the bullet
+    // the speed of the bullet
     float speed = 4;
 
     // Start is called before the first frame update
