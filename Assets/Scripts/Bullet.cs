@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    //Theo
     [SerializeField]
     float speed;
     private Transform Targets;
@@ -19,21 +20,6 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (GameObject.Find("Enemy").GetComponent<Enemy>().goRight == true)
-        {
-            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
-            if (transform.position.x >= 8)
-            {
-                Destroy(gameObject);
-            }
-        }
-        else if (GameObject.Find("Enemy").GetComponent<Enemy>().goRight == false)
-        {
-            transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
-            if (transform.position.x <= -8)
-            {
-                Destroy(gameObject);
-            }*/
         timer += Time.deltaTime;
         if (timer >= 2)
         {
@@ -41,7 +27,7 @@ public class Bullet : MonoBehaviour
         }
         Targets = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         transform.position = Vector3.MoveTowards(transform.position, Targets.position, speed * Time.deltaTime);
-
+        
     }
 
         
@@ -50,9 +36,10 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
+        
         if (collision.gameObject.tag == "Player")
         {
-
+            Destroy(gameObject);
         }
         
         if (collision.gameObject.tag == "PBullet")
@@ -63,5 +50,6 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        
     }
 }
