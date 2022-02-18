@@ -33,7 +33,7 @@ public class Backstory : MonoBehaviour
         {
             if (timer > 0.3)
             {
-                line += 1;
+                line += 1; // Oscar - När "Next" Knappen trycks så kommer line floaten ökas med 1, vilket gör att texten ändras vilket man ser där nere, när line når 8 så kommer den byta scen.
                 timer = 0;
             }
         }
@@ -65,7 +65,7 @@ public class Backstory : MonoBehaviour
         }
         if (line == 7)
         {
-            backstory = "You are under great danger and you will risk your life during this task.With a little bit of thinking you decide to accept the challenge and save the forest.";
+            backstory = "You are under great danger and you will risk your life during this task. With a little bit of thinking you decide to accept the challenge and save the forest.";
 
         }
         if (line >= 8)
