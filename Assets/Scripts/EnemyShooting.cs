@@ -17,7 +17,7 @@ public class EnemyShooting : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= 3) 
         {
-            Instantiate(Bullet, transform.position + new Vector3(0, 1, 0), Quaternion.identity); //fienden skjuter var 3:e sekund
+            Instantiate(Bullet, transform.position, Quaternion.identity); //fienden skjuter var 3:e sekund
             timer = 0;
         }
         

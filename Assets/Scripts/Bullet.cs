@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //Theo
+    
     [SerializeField]
     float speed;
     private Transform Targets;
@@ -20,10 +20,10 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        timer += Time.deltaTime; 
         if (timer >= 2)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); //ifall skottet har funnits i 2 sekunder så förstörs det - Theo
         }
         Targets = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         transform.position = Vector3.MoveTowards(transform.position, Targets.position, speed * Time.deltaTime);
@@ -35,9 +35,9 @@ public class Bullet : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        Destroy(gameObject); //om skottet träffar något förstörs det (kollision med andra skott och fiender är avstängt) - Theo
         
-        if (collision.gameObject.tag == "Player")
+        /*if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }
@@ -49,7 +49,7 @@ public class Bullet : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-        }
+        }*/
         
     }
 }

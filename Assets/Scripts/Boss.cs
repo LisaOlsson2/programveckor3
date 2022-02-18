@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Boss : MonoBehaviour
 {
-    
+
     [SerializeField]
     float speed;
     public bool goRight;
-    float hp = 3;
+    float hp = 20;
     float timer;
 
     Player player;
@@ -25,17 +25,17 @@ public class Enemy : MonoBehaviour
 
         if (goRight == true)
         {
-            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime; //fienden rör sig åt höger ifall goRight = true - Theo
+            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime; //Bossen rör sig åt höger ifall goRight = true - Theo
         }
         if (goRight == false)
         {
-            transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime; //fienden rör sig åt vänster ifall goRight = false - Theo
+            transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime; //Bossen rör sig åt vänster ifall goRight = false - Theo
         }
 
         if (timer <= 2)
         {
             goRight = true;
-            
+
         }
         if (timer >= 2)
         {
@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
             if (timer >= 4)
             {
                 timer = 0;  // goRight = true i 2 sekunder och false i 2 sekunder - Theo
-            } 
+            }
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -66,3 +66,4 @@ public class Enemy : MonoBehaviour
         }
     }
 }
+
