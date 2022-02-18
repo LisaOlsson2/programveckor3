@@ -13,13 +13,13 @@ public class Enemy2 : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
-        Targets = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        Targets = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, Targets.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, Targets.position, speed * Time.deltaTime); // Oscar - Denna kod gör så att enemyn ska ändra sin position till den "Targets" har vilket i detta fall betyder att den går emot spelaren
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

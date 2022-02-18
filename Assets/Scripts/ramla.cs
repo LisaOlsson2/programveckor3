@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Oscar
 public class ramla : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -21,5 +21,6 @@ public class ramla : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        // En simpel kod gjord för att om man ramlar ner i hålet på scenen 2.1 så ska spelaren dö.
     }
 }

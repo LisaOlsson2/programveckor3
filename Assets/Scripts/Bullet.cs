@@ -25,9 +25,9 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Targets = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        transform.position = Vector3.MoveTowards(transform.position, Targets.position, speed * Time.deltaTime);
-        
+        Targets = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); 
+        transform.position = Vector3.MoveTowards(transform.position, Targets.position, speed * Time.deltaTime); //Oscar - som med Enemy2 koden så är detta gjort så att skotten ska röra sig emot spelaren.
+
     }
 
         
