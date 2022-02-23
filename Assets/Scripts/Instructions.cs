@@ -22,6 +22,6 @@ public class Instructions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = instructions; // so that it updates
+        text.text = instructions; // having the text as the text in instructions
     }
 }

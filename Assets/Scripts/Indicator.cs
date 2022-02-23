@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Indicator : MonoBehaviour
 {
-    // for its position
+    // for the camera's position
     CameraFollow cam;
 
     // to know what to indicate
@@ -14,7 +14,7 @@ public class Indicator : MonoBehaviour
 
     // an int to represent it
     [SerializeField]
-    int thing;
+    int thing; // 1 = key 2 = gun
 
     // Start is called before the first frame update
     void Start()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Lisa och Ella
+// This script is explained in Portraits
 
 public class EndPortraits : MonoBehaviour
 {

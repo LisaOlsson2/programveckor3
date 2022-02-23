@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 // Lisa
 
+// GetKeyDown is a thing apparently ._.
+
 public class Player : MonoBehaviour
 {
     // to change animations
@@ -378,11 +380,11 @@ public class Player : MonoBehaviour
         }
 
         // taking damage
-        if (dmg == false) // so that you can't take damage right after taking damage
+        if (dmg == false)
         {
             if (collision.gameObject.tag == "Bullet")
             {
-                dmg = true;
+                dmg = true; // so that you can't take damage right after taking damage, also so that it can play the damage animations
                 health -= 1;
             }
             if (collision.gameObject.tag == "Enemy2")
@@ -397,6 +399,7 @@ public class Player : MonoBehaviour
             }
         }
 
+        // reloading the scene when the player falls down the hole in level 2
         if (collision.gameObject.tag == "ramla")
         {
             SceneManager.LoadScene(scene.name);
@@ -404,7 +407,6 @@ public class Player : MonoBehaviour
     }
     void OnCollisionExit2D(Collision2D collision)
     {
-        // air stuff
         if (collision.gameObject.tag == "Ground")
         {
             grounded = false; // the player's in the air

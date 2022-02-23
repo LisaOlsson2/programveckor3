@@ -24,8 +24,7 @@ public class Ruby : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if the player has the ruby
-        if (player.ruby == true)
+        if (player.ruby == true) // if the player has the ruby
         {
             // where it'll be in relation to the camera
             transform.position = new Vector3(cam.transform.position.x - 6.5f, cam.transform.position.y - 3.8f, 0);

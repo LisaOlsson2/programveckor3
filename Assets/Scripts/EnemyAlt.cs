@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class EnemyAlt : MonoBehaviour
 {
-    // for its position so that it can do stuff in the right direction, and also to increase its xp on death
+    // for the player's position so that it can do stuff in the right direction, and also to increase the player's xp on death
     Player player;
 
     Animator animator;
+    
     [SerializeField]
     private GameObject eBullet;
 
@@ -21,8 +22,7 @@ public class EnemyAlt : MonoBehaviour
     
     float health = 5;
 
-    // damage stuff
-    bool dmg;
+    bool dmg; // true for 0.7 seconds at a time. During this time it plays its damage animation and can't take damage
     float dmgTimer;
 
     // Start is called before the first frame update
@@ -37,6 +37,7 @@ public class EnemyAlt : MonoBehaviour
     {
         timer += Time.deltaTime;
 
+        // idle animations
         if (player.transform.position.x > transform.position.x && timer <= 2.3 && dmg == false)
         {
             direction = 1;
@@ -62,12 +63,13 @@ public class EnemyAlt : MonoBehaviour
             }
         }
 
-        timer += Time.deltaTime;
+        // moving towards the player if it's within 3 x coordinates
         if (player.transform.position.x - transform.position.x < 3 && player.transform.position.x - transform.position.x > -3 && dmg == false)
         {
             transform.position += new Vector3(player.transform.position.x - transform.position.x, 0, 0).normalized * speed * Time.deltaTime;
         }
 
+        // shooting animations
         if (timer > 2.3 && dmg == false)
         {
             if (direction == 1)
@@ -80,6 +82,7 @@ public class EnemyAlt : MonoBehaviour
             }
         }
 
+        // shooting
         if (timer > 3 && dmg == false)
         {
             timer = 0;
@@ -93,21 +96,23 @@ public class EnemyAlt : MonoBehaviour
             }
         }
 
+        // dying
         if (health <= 0 && dmg == false)
         {
             player.xp += 2;
             Destroy(gameObject);
         }
 
+        // death and damage animations
         if (dmg == true)
         {
             if (direction == 1)
             {
-                if (health <= 0)
+                if (health <= 0) // death
                 {
                     animator.SetInteger("enemy1", 7);
                 }
-                else
+                else // damage
                 {
                     animator.SetInteger("enemy1", 8);
                 }
@@ -127,13 +132,14 @@ public class EnemyAlt : MonoBehaviour
         }
         if (dmgTimer >= 0.7)
         {
-            dmg = false;
+            dmg = false; // so that it can take damage again, or die if its health has reached 0
             dmgTimer = 0;
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        // losing health when the players bullet hits it
         if (collision.gameObject.tag == "PBullet" && dmg == false)
         {
             dmg = true;

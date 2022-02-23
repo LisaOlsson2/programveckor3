@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class PBullet : MonoBehaviour
 {
-    // pretty self explanatory
     float speed = 10;
 
     // the direction of the bullet
@@ -19,7 +18,7 @@ public class PBullet : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
-        direction = player.direction; // having the direction set so that it doesn't change
+        direction = player.direction; // making the direction the direction that was calculated in Player
     }
 
     // Update is called once per frame
@@ -35,6 +34,6 @@ public class PBullet : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject); // destroying it when it hits stuff
+        Destroy(gameObject); // destroying it when it hits something
     }
 }

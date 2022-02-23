@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 // Lisa skrev koden
 // Ella skrev manus
 
+// Samma principer har kopierats över till Backstory och EndDialogue
+
 public class Dialogue : MonoBehaviour
 {
     string dialogue;
@@ -41,14 +43,14 @@ public class Dialogue : MonoBehaviour
         {
             if (timer > 0.3)
             {
-                line += 1;
+                line += 1; // ökar en variabel med 1. Värdet på variabeln bestämmer repliken.
                 timer = 0;
             }
         }
 
         if (line == 1)
         {
-            dialogue = "Hello you";
+            dialogue = "Hello you"; // ändrar på texten enligt värdet på line
         }
 
         if (line == 2)
@@ -134,13 +136,13 @@ public class Dialogue : MonoBehaviour
         if (line == 18)
         {
             dialogue = "YES\nNO";
-            square.transform.position = new Vector3(1.7f, -1.75f, 0);
+            square.transform.position = new Vector3(1.7f, -1.75f, 0); // moving a rectangle to where YES is
             line += 1;
         }
 
         if (line >= 20)
         {
-            // goin back to the previous scene if the player answers no
+            // going back to the previous scene if the player answers no
             if (square.transform.position.y < -2)
             {
                 SceneManager.LoadScene("Lisa", LoadSceneMode.Single);

@@ -26,6 +26,7 @@ public class DialogueChoices : MonoBehaviour
     {
         // it's moved at first in the dialogue script
         // everything in this script could have been in the dialogue script actually
+        // but it's not
 
         if (dialogue.line == 19)
         {
@@ -39,6 +40,8 @@ public class DialogueChoices : MonoBehaviour
                 transform.position = new Vector3(1.7f, -2.25f, 0);
             }
         }
+
+        // making a choice is done in Dialogue
       
     }
 }

@@ -7,8 +7,8 @@ using UnityEngine;
 public class Enemy2Alt : MonoBehaviour
 {
     float speed = 6;
-    float spawnX;
-    int direction = 1;
+    float spawnX; // the x position where it starts
+    int direction = 1; // 1 = right, 2 = left
     float health = 7;
 
     bool dmg;
@@ -22,12 +22,13 @@ public class Enemy2Alt : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         animator = GetComponent<Animator>();
-        spawnX = transform.position.x;
+        spawnX = transform.position.x; // saving the x position it starts in in spawnX
     }
 
     // Update is called once per frame
     void Update()
     {
+        // changing the direction when it goes too far away from its starting position
         if (transform.position.x < spawnX - 3)
         {
             direction = 1;
@@ -39,8 +40,8 @@ public class Enemy2Alt : MonoBehaviour
 
         if (direction == 1 && dmg == false)
         {
-            animator.SetInteger("en2", 0);
-            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            animator.SetInteger("en2", 0); // the right walking animation
+            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime; // moving to the right
         }
         if (direction == 2 && dmg == false)
         {
@@ -54,15 +55,16 @@ public class Enemy2Alt : MonoBehaviour
             Destroy(gameObject);
         }
 
+        // damage and death animations
         if (dmg == true)
         {
-            if (direction == 1)
+            if (direction == 1) // 
             {
-                if (health <= 0)
+                if (health <= 0) // death
                 {
                     animator.SetInteger("en2", 4);
                 }
-                else
+                else // damage
                 {
                     animator.SetInteger("en2", 3);
                 }

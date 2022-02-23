@@ -10,7 +10,7 @@ public class Portraits : MonoBehaviour
     [SerializeField]
     int portrait;
 
-    // which lines the portraits will be shown at
+    // to get the lines the portraits will be shown at
     Dialogue dialogue;
 
     // Start is called before the first frame update
@@ -25,14 +25,14 @@ public class Portraits : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (portrait == 1)
+        if (portrait == 1) // the 1 has been assigned to it in unity
         {
-            if (dialogue.line == 2 || dialogue.line == 18 || dialogue.line == 19)
+            if (dialogue.line == 2 || dialogue.line == 18 || dialogue.line == 19) // the lines the portait will be shown at
             {
-                transform.position = new Vector3(-6.9f, -2.9f, 0);
+                transform.position = new Vector3(-6.9f, -2.9f, 0); // this position is inside of what's visible
             }
             else
-                transform.position = new Vector3(-6.9f, -8, 0);
+                transform.position = new Vector3(-6.9f, -8, 0); // this position is outside of what's visible
         }
         if (portrait == 2)
         {
