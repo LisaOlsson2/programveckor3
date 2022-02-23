@@ -32,17 +32,17 @@ public class Boss : MonoBehaviour
             transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime; //Bossen rör sig åt vänster ifall goRight = false - Theo
         }
 
-        if (timer <= 2)
+        if (timer <= 3)
         {
             goRight = true;
 
         }
-        if (timer >= 2)
+        if (timer >= 3)
         {
             goRight = false;
-            if (timer >= 4)
+            if (timer >= 6)
             {
-                timer = 0;  // goRight = true i 2 sekunder och false i 2 sekunder - Theo
+                timer = 0;  // goRight = true i 3 sekunder och false i 3 sekunder - Theo
             }
         }
     }
