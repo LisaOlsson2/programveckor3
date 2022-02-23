@@ -11,6 +11,7 @@ public class EnemyBullet : MonoBehaviour
 
     float speed = 4;
 
+    float bulletTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,13 @@ public class EnemyBullet : MonoBehaviour
 
         // destroying the bullet outside the borders
         if (transform.position.x > 100 || transform.position.x < -26 || transform.position.y < -12 || transform.position.y > 40)
+        {
+            Destroy(gameObject);
+        }
+        
+        // Destroys the bullet after 5 sec flight time - Theo
+        bulletTimer += Time.deltaTime; 
+        if (bulletTimer >= 5)
         {
             Destroy(gameObject);
         }

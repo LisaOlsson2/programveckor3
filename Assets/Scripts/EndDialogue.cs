@@ -78,17 +78,7 @@ public class EndDialogue : MonoBehaviour
             SceneManager.LoadScene("End", LoadSceneMode.Single);
         }
 
-        // if (line == 8)
-        // {
-        //dialogue = "YES\nNO";
-        //square.transform.position = new Vector3(1.7f, -1.75f, 0);
-        //line += 1;
-        // }
-        //if (line >= 9)
-        //{
-        //square.transform.position = new Vector3(1.7f, 6, 0);
-        //SceneManager.LoadScene("Lisa", LoadSceneMode.Single);
-        //}
+       
     }
 
 

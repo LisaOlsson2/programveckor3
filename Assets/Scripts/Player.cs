@@ -339,7 +339,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKey(talk) || Input.GetKey(talk2))
             {
-                SceneManager.LoadScene("Level 2", LoadSceneMode.Single);
+                SceneManager.LoadScene("Level 2.1", LoadSceneMode.Single);
             }
         }
 
@@ -359,6 +359,16 @@ public class Player : MonoBehaviour
                 )
             {
                 SceneManager.LoadScene("Level 3", LoadSceneMode.Single);
+            }
+        }
+        
+        // transport to boss level
+        if (Input.GetKey(talk) || Input.GetKey(talk2))
+        {
+            if (collision.gameObject.name == "Level4Transport" // && xp >= 12
+                )
+            {
+                SceneManager.LoadScene("Boss Battle", LoadSceneMode.Single);
             }
         }
     }

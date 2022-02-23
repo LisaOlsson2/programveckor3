@@ -24,6 +24,7 @@ public class EnemyAlt : MonoBehaviour
 
     bool dmg; // true for 0.7 seconds at a time. During this time it plays its damage animation and can't take damage
     float dmgTimer;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +96,7 @@ public class EnemyAlt : MonoBehaviour
                 Instantiate(eBullet, transform.position + new Vector3(-1, 0.6f, 0), Quaternion.identity);
             }
         }
+        
 
         // dying
         if (health <= 0 && dmg == false)
