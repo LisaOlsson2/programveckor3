@@ -53,14 +53,8 @@ public class Boss : MonoBehaviour
             hp -= 1;
             if (hp <= 0)
             {
-                if (player.scene.name == "Level 1")
-                {
-                    player.xp += 6;
-                }
-                if (player.scene.name == "Level 3")
-                {
-                    player.xp += 1;
-                }
+                player.xp += 2;
+                
                 Destroy(gameObject);
             }
         }

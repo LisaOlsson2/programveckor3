@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//ella 
 public class MusicManager : MonoBehaviour
 {
 
@@ -16,6 +16,7 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //använder loop för att musiken ska loopa 
         if (AS.isPlaying == false)
         {
             AS.Play(); 

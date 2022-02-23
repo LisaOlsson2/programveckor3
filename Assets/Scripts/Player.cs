@@ -355,8 +355,7 @@ public class Player : MonoBehaviour
         // transport to level 2
         if (Input.GetKey(talk) || Input.GetKey(talk2))
         {
-            if (collision.gameObject.name == "DialogueTrigger2" // && xp >= 12
-                )
+            if (collision.gameObject.name == "DialogueTrigger2" && xp >= 12)
             {
                 SceneManager.LoadScene("Level 3", LoadSceneMode.Single);
             }
@@ -365,8 +364,7 @@ public class Player : MonoBehaviour
         // transport to boss level
         if (Input.GetKey(talk) || Input.GetKey(talk2))
         {
-            if (collision.gameObject.name == "Level4Transport" // && xp >= 12
-                )
+            if (collision.gameObject.name == "Level4Transport" && xp >= 12)
             {
                 SceneManager.LoadScene("Boss Battle", LoadSceneMode.Single);
             }
